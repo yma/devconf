@@ -1,0 +1,17 @@
+#!/bin/bash
+PlayVersion="$1"
+if [ -z "$PlayVersion" ] || [[ "$PlayVersion" == "-" ]]; then
+    if [ -e project/plugins.sbt ]; then
+        PlayVersion="$(cat project/plugins.sbt | sed -n 's/^\s*addSbtPlugin.*play.*sbt-plugin.*"\([a-zA-Z0-9_.,+-]\+\)".*$/\1/p')"
+        echo "Play project version detected : $PlayVersion"
+    fi
+fi
+
+shift 1
+PlayArgs=
+if [[ "$PlayVersion" == "2."* ]] && [ -f "conf/local.application.conf" ]; then
+    echo "Use conf/local.application.conf"
+    PlayArgs="-Dconfig.file=conf/local.application.conf"
+fi
+
+~/soft/play/"$PlayVersion"/play "$@" "$PlayArgs"

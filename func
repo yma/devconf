@@ -1,0 +1,18 @@
+DEVCONFDIR="$(realpath "$(dirname "$0")")"
+BACKUPSUFFIX=".devconf-backup"
+
+backup_move() {
+	if [ -e "$1" ]; then
+		mv "$1" "$1$BACKUPSUFFIX"
+	fi
+}
+
+backup_copy() {
+	if [ -e "$1" ]; then
+		cp "$1" "$1$BACKUPSUFFIX"
+	fi
+}
+
+link() {
+	ln -s "$DEVCONFDIR/$1" "$2"
+}
