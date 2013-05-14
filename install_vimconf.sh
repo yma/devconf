@@ -4,7 +4,7 @@
 backup_move ~/.vim
 backup_move ~/.vimrc
 link vimconf ~/.vim
-link vimconf/vimrc ~/.vimrc
+ln -s .vim/vimrc ~/.vimrc
 
 cd "$DEVCONFDIR/vimconf"
 git submodule update --init

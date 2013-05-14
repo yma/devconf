@@ -5,3 +5,4 @@
 "$DEVCONFDIR/install_gitconfig.sh"
 "$DEVCONFDIR/install_tmuxconf.sh"
 "$DEVCONFDIR/install_vimconf.sh"
+"$DEVCONFDIR/install_ackrc.sh"
