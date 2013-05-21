@@ -27,3 +27,7 @@
 	default = nothing
 [rerere]
 	enabled = true
+[diff]
+        tool = vimdiff
+[merge]
+        tool = vimdiff
