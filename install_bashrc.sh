@@ -1,6 +1,7 @@
 #!/bin/sh
 . "$(dirname $0)/func"
 
+echo "Install bash configuration..."
 backup_copy ~/.bashrc
 
 SOURCE="$DEVCONFDIR/etc/bashrc"
