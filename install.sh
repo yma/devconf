@@ -6,3 +6,4 @@
 "$DEVCONFDIR/install_tmuxconf.sh"
 "$DEVCONFDIR/install_vimconf.sh"
 "$DEVCONFDIR/install_ackrc.sh"
+"$DEVCONFDIR/install_ctags.sh"
