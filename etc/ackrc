@@ -2,3 +2,4 @@
 --type-set=stylus=.styl
 --type-set=less=.less
 --type-set=config=.conf
+--type-set=txt=.txt
