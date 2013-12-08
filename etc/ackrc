@@ -3,3 +3,5 @@
 --type-set=less=.less
 --type-set=config=.conf
 --type-set=txt=.txt
+--ignore-dir=node_modules
+--ignore-dir=target

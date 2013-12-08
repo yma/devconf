@@ -12,3 +12,5 @@
 --regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
 --regex-scala=/^[ \t]*package[ \t]+object[ \t]+([a-zA-Z0-9_.]+)/\1/p,package objects/
 --exclude=*.min.js
+--exclude=node_modules
+--exclude=target
