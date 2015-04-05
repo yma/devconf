@@ -13,5 +13,7 @@ if ! grep -q '\s*path\s*=\s*'"$DEVCONFDIR/etc/gitconfig" "$GITDIR/config"; then
 EOF
 fi
 
-backup_move "$GITDIR/ignore"
-link etc/gitignore "$GITDIR/ignore"
+if ! linked etc/gitignore "$GITDIR/ignore"; then
+    backup_move "$GITDIR/ignore"
+    link etc/gitignore "$GITDIR/ignore"
+fi

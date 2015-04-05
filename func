@@ -17,6 +17,10 @@ backup_copy() {
     fi
 }
 
+linked() {
+    [ "$DEVCONFDIR/$1" = "$(readlink "$2")" ]
+}
+
 link() {
     ln -s "$DEVCONFDIR/$1" "$2"
 }

@@ -1,14 +1,19 @@
 #!/bin/sh
 . "$(dirname $0)/func"
 
-echo "Install vim configuration..."
-backup_move ~/.vim
-backup_move ~/.vimrc
-link vimconf ~/.vim
-ln -s .vim/vimrc ~/.vimrc
-
+echo "Initialize vim repository..."
 cd "$DEVCONFDIR"
 git submodule update --init
-
 cd "$DEVCONFDIR/vimconf"
 git submodule update --init
+
+echo "Install vim configuration..."
+if ! linked vimconf ~/.vim; then
+    backup_move ~/.vim
+    link vimconf ~/.vim
+fi
+
+if ! [ .vim/vimrc = "$(readlink ~/.vimrc)" ]; then
+    backup_move ~/.vimrc
+    ln -s .vim/vimrc ~/.vimrc
+fi
