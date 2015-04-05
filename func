@@ -4,19 +4,19 @@ DEVCONFDIR="$(realpath "$(dirname "$0")")"
 BACKUPSUFFIX=".devconf-backup$(date +%Y%m%d)"
 
 backup_move() {
-	if [ -e "$1" -o -L "$1" ]; then
-		echo "Backup file $1"
-		mv "$1" "$1$BACKUPSUFFIX"
-	fi
+    if [ -e "$1" -o -L "$1" ]; then
+        echo "Backup file $1"
+        mv "$1" "$1$BACKUPSUFFIX"
+    fi
 }
 
 backup_copy() {
-	if [ -e "$1" -o -L "$1" ]; then
-		echo "Backup file $1"
-		cp "$1" "$1$BACKUPSUFFIX"
-	fi
+    if [ -e "$1" -o -L "$1" ]; then
+        echo "Backup file $1"
+        cp "$1" "$1$BACKUPSUFFIX"
+    fi
 }
 
 link() {
-	ln -s "$DEVCONFDIR/$1" "$2"
+    ln -s "$DEVCONFDIR/$1" "$2"
 }

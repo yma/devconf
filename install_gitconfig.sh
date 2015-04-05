@@ -9,7 +9,7 @@ if ! grep -q '\s*path\s*=\s*'"$DEVCONFDIR/etc/gitconfig" "$GITDIR/config"; then
     backup_copy "$GITDIR/config"
     cat << EOF >> "$GITDIR/config"
 [Include]
-	path = $DEVCONFDIR/etc/gitconfig
+    path = $DEVCONFDIR/etc/gitconfig
 EOF
 fi
 
