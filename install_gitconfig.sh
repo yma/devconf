@@ -5,7 +5,7 @@ echo "Install git configuration..."
 GITDIR=~/.config/git
 mkdir -p "$GITDIR"
 
-if ! grep -q '\s*path\s*=\s*'"$DEVCONFDIR/etc/gitconfig" "$GITDIR/config"; then
+if ! search_pattern '\s*path\s*=\s*'"$DEVCONFDIR/etc/gitconfig" "$GITDIR/config"; then
     backup_copy "$GITDIR/config"
     cat << EOF >> "$GITDIR/config"
 [Include]

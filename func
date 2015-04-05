@@ -17,6 +17,10 @@ backup_copy() {
     fi
 }
 
+search_pattern() {
+    [ -e "$2" ] && grep -q "$1" "$2"
+}
+
 linked() {
     [ "$DEVCONFDIR/$1" = "$(readlink "$2")" ]
 }

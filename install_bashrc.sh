@@ -4,7 +4,7 @@
 echo "Install bash configuration..."
 SOURCE="$DEVCONFDIR/etc/bashrc"
 
-if ! grep -q '\s*\.\s\+"'"$SOURCE"'"' ~/.bashrc; then
+if ! search_pattern '\s*\.\s\+"'"$SOURCE"'"' ~/.bashrc; then
     backup_copy ~/.bashrc
     cat << EOF >> ~/.bashrc
 
