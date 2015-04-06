@@ -17,3 +17,5 @@ if ! [ .vim/vimrc = "$(readlink ~/.vimrc)" ]; then
     backup_move ~/.vimrc
     ln -s .vim/vimrc ~/.vimrc
 fi
+
+vim +BundleInstall +qall
