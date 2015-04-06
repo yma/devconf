@@ -26,5 +26,5 @@ linked() {
 }
 
 link() {
-    ln -s "$DEVCONFDIR/$1" "$2"
+    ln -sn "$DEVCONFDIR/$1" "$2"
 }
