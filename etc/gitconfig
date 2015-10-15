@@ -24,7 +24,7 @@
     cleanup-whitespace-m2 = "!f() { git ls-files | xargs sed -i -r 's/\\s+'\\$'//'; }; f"
     convert-indent-4Tab = "!f() { git diff --cached --name-only | xargs sed -i -r ':repeat; s/^(\\t*)\\s{4}/\\1\\t/; t repeat'; }; f"
 [push]
-    default = nothing
+    default = current
 [rerere]
     enabled = true
 [diff]
