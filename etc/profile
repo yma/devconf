@@ -12,5 +12,8 @@ if [ "$COLORTERM" == "gnome-terminal" ]; then
     export TERM=xterm-256color
 fi
 
-# Fix MacBook Pro keyboard layout
-setxkbmap -option apple:badmap
+# Mac keyboard layout
+if [ -x /usr/bin/setxkbmap ]; then
+    #TODO Find a way to initialize it during X session startup
+    /usr/bin/setxkbmap -option apple:badmap
+fi
